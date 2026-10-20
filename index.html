@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serene Voyage Travel | Ground Services & Destination Experts in Thailand</title>
+    <meta name="description" content="Your trusted ground services partner in Thailand. Reliable transfers, attraction tickets, and seamless destination services across Phuket, Krabi, Bangkok, Pattaya, and Koh Samui.">
+    
+    <!-- Fonts from source -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Josefin+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=League+Gothic&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========== RESET & BASE ========== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        :root {
+            --color-navy: #0a2b4e;
+            --color-gold: #b8964a;
+            --color-light-gold: #d4b978;
+            --color-blue: #1a6b9e;
+            --color-teal: #3a8fad;
+            --color-white: #ffffff;
+            --color-off-white: #f9f7f4;
+            --color-black: #1a1a1a;
+            --color-gray: #6b6b6b;
+            --color-light-gray: #e8e4df;
+            
+            --font-heading: 'Josefin Sans', sans-serif;
+            --font-body: 'Cabin', sans-serif;
+            --font-accent: 'League Gothic', sans-serif;
+            
+            --transition: all 0.3s ease;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+        }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--color-black);
+            background: var(--color-white);
+            line-height: 1.6;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+        
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        ul { list-style: none; }
+        button { cursor: pointer; border: none; background: none; font-family: inherit; }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* ========== TYPOGRAPHY ========== */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: 0.03em;
+        }
+        
+        .h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+        .h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        .h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+        
+        .section-label {
+            font-family: var(--font-accent);
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            display: block;
+            margin-bottom: 12px;
+        }
+        
+        /* ========== BUTTONS ========== */
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn--primary {
+            background: var(--color-gold);
+            color: var(--color-white);
+            border-color: var(--color-gold);
+        }
+        
+        .btn--primary:hover {
+            background: var(--color-light-gold);
+            border-color: var(--color-light-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(184, 150, 74, 0.3);
+        }
+        
+        .btn--outline {
+            background: transparent;
+            color: var(--color-white);
+            border-color: var(--color-white);
+        }
+        
+        .btn--outline:hover {
+            background: var(--color-white);
+            color: var(--color-navy);
+            transform: translateY(-2px);
+        }
+        
+        .btn--dark {
+            background: var(--color-navy);
+            color: var(--color-white);
+            border-color: var(--color-navy);
+        }
+        
+        .btn--dark:hover {
+            background: var(--color-blue);
+            border-color: var(--color-blue);
+            transform: translateY(-2px);
+        }
+        
+        /* ========== HEADER ========== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 20px 0;
+        }
+        
+        .header--scrolled {
+            background: rgba(255,255,255,0.98);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            padding: 12px 0;
+        }
+        
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .header__logo img {
+            height: 60px;
+            width: auto;
+            transition: var(--transition);
+        }
+        
+        .header--scrolled .header__logo img {
+            height: 48px;
+        }
+        
+        .header__nav {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+        
+        .header__nav a {
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-white);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .header--scrolled .header__nav a {
+            color: var(--color-navy);
+        }
+        
+        .header__nav a:hover {
+            color: var(--color-gold);
+        }
+        
+        .header__cta {
+            margin-left: 12px;
+        }
+        
+        .header__cta .btn {
+            padding: 10px 28px;
+            font-size: 0.8rem;
+        }
+        
+        .header--scrolled .header__cta .btn--outline {
+            color: var(--color-navy);
+            border-color: var(--color-navy);
+        }
+        
+        .header--scrolled .header__cta .btn--outline:hover {
+            background: var(--color-navy);
+            color: var(--color-white);
+        }
+        
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 8px;
+        }
+        
+        .mobile-toggle span {
+            width: 26px;
+            height: 2px;
+            background: var(--color-white);
+            transition: var(--transition);
+        }
+        
+        .header--scrolled .mobile-toggle span {
+            background: var(--color-navy);
+        }
+        
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--color-navy);
+            overflow: hidden;
+        }
+        
+        .hero__bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.55;
+        }
+        
+        .hero__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(10,43,78,0.85) 0%, rgba(10,43,78,0.4) 100%);
+        }
+        
+        .hero__content {
+            position: relative;
+            z-index: 2;
+            max-width: 780px;
+            padding: 160px 0 120px;
+        }
+        
+        .hero__content .section-label {
+            color: var(--color-light-gold);
+        }
+        
+        .hero__content h1 {
+            color: var(--color-white);
+            margin-bottom: 24px;
+        }
+        
+        .hero__content p {
+            color: rgba(255,255,255,0.88);
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+        
+        .hero__buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        /* ========== SECTION GENERIC ========== */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section--gray {
+            background: var(--color-off-white);
+        }
+        
+        .section--dark {
+            background: var(--color-navy);
+            color: var(--color-white);
+        }
+        
+        .section__header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 64px;
+        }
+        
+        .section__header p {
+            color: var(--color-gray);
+            font-size: 1.05rem;
+            margin-top: 16px;
+        }
+        
+        .section--dark .section__header p {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* ========== SERVICES ========== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+        
+        .service-card {
+            background: var(--color-white);
+            padding: 40px 28px;
+            border: 1px solid var(--color-light-gray);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-gold);
+        }
+        
+        .service-card__icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--color-navy), var(--color-blue));
+            border-radius: 50%;
+            color: var(--color-white);
+            font-size: 1.6rem;
+        }
+        
+        .service-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+            color: var(--color-navy);
+        }
+        
+        .service-card p {
+            font-size: 0.92rem;
+            color: var(--color-gray);
+            line-height: 1.6;
+        }
+        
+        /* ========== DESTINATIONS ========== */
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+        
+        .destination-tile {
+            position: relative;
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .destination-tile__bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.6s ease;
+        }
+        
+        .destination-tile:hover .destination-tile__bg {
+            transform: scale(1.08);
+        }
+        
+        .destination-tile__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10,43,78,0.85) 0%, rgba(10,43,78,0.05) 60%);
+            transition: var(--transition);
+        }
+        
+        .destination-tile:hover .destination-tile__overlay {
+            background: linear-gradient(to top, rgba(10,43,78,0.95) 0%, rgba(10,43,78,0.15) 60%);
+        }
+        
+        .destination-tile__name {
+            position: absolute;
+            bottom: 28px;
+            left: 24px;
+            right: 24px;
+            color: var(--color-white);
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            letter-spacing: 0.08em;
+            z-index: 2;
+        }
+        
+        .destination-tile__name::after {
+            content: '';
+            display: block;
+            width: 32px;
+            height: 2px;
+            background: var(--color-gold);
+            margin-top: 10px;
+            transition: var(--transition);
+        }
+        
+        .destination-tile:hover .destination-tile__name::after {
+            width: 56px;
+        }
+        
+        /* ========== B2B PARTNERS ========== */
+        .b2b {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .b2b__content h2 {
+            color: var(--color-white);
+            margin-bottom: 24px;
+        }
+        
+        .b2b__content p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.05rem;
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+        
+        .b2b__image {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+        
+        .b2b__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .b2b__image::after {
+            content: '';
+            position: absolute;
+            inset: 16px;
+            border: 1px solid rgba(255,255,255,0.2);
+            pointer-events: none;
+        }
+        
+        /* ========== WHY US ========== */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 32px;
+            text-align: center;
+        }
+        
+        .why-item__icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--color-gold);
+            border-radius: 50%;
+            color: var(--color-gold);
+            font-size: 1.4rem;
+        }
+        
+        .why-item h4 {
+            font-size: 0.95rem;
+            color: var(--color-navy);
+            letter-spacing: 0.06em;
+            line-height: 1.4;
+        }
+        
+        /* ========== WEDDINGS ========== */
+        .weddings {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            min-height: 500px;
+        }
+        
+        .weddings__content {
+            background: var(--color-off-white);
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .weddings__content h2 {
+            color: var(--color-navy);
+            margin-bottom: 24px;
+        }
+        
+        .weddings__content p {
+            color: var(--color-gray);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+        
+        .weddings__image {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .weddings__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* ========== TESTIMONIALS ========== */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        
+        .testimonial-card {
+            background: var(--color-white);
+            padding: 40px 32px;
+            border: 1px solid var(--color-light-gray);
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        .testimonial-card:hover {
+            box-shadow: var(--shadow);
+            border-color: var(--color-gold);
+        }
+        
+        .testimonial-card__quote {
+            font-size: 2.4rem;
+            color: var(--color-gold);
+            font-family: Georgia, serif;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+        
+        .testimonial-card p {
+            font-size: 0.95rem;
+            color: var(--color-gray);
+            font-style: italic;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+        
+        .testimonial-card__author {
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-navy);
+        }
+        
+        /* ========== CTA ========== */
+        .cta {
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+            background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 100%);
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: rgba(184, 150, 74, 0.08);
+            pointer-events: none;
+        }
+        
+        .cta h2 {
+            color: var(--color-white);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            max-width: 640px;
+            margin: 0 auto 36px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta__buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* ========== ENQUIRY FORM ========== */
+        .enquiry {
+            background: var(--color-off-white);
+        }
+        
+        .enquiry__grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .enquiry__info h2 {
+            color: var(--color-navy);
+            margin-bottom: 20px;
+        }
+        
+        .enquiry__info p {
+            color: var(--color-gray);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+        
+        .enquiry__contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            color: var(--color-navy);
+        }
+        
+        .enquiry__contact-item span {
+            font-size: 1.2rem;
+        }
+        
+        .enquiry__contact-item a {
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .enquiry__contact-item a:hover {
+            color: var(--color-gold);
+        }
+        
+        .form {
+            background: var(--color-white);
+            padding: 48px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form__group {
+            margin-bottom: 20px;
+        }
+        
+        .form__group label {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-navy);
+            margin-bottom: 8px;
+        }
+        
+        .form__group input,
+        .form__group select,
+        .form__group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--color-light-gray);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            transition: var(--transition);
+            background: var(--color-white);
+        }
+        
+        .form__group input:focus,
+        .form__group select:focus,
+        .form__group textarea:focus {
+            outline: none;
+            border-color: var(--color-gold);
+        }
+        
+        .form__row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        
+        .form .btn {
+            width: 100%;
+            margin-top: 8px;
+        }
+        
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--color-navy);
+            color: rgba(255,255,255,0.75);
+            padding: 80px 0 0;
+        }
+        
+        .footer__grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer__brand img {
+            height: 60px;
+            margin-bottom: 24px;
+        }
+        
+        .footer__brand p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            max-width: 280px;
+        }
+        
+        .footer h4 {
+            color: var(--color-white);
+            font-size: 0.9rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        
+        .footer ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer ul li a {
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .footer ul li a:hover {
+            color: var(--color-gold);
+            padding-left: 4px;
+        }
+        
+        .footer__bottom {
+            padding: 28px 0;
+            text-align: center;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .destinations-grid { grid-template-columns: repeat(3, 1fr); }
+            .why-grid { grid-template-columns: repeat(3, 1fr); gap: 40px 24px; }
+            .b2b { grid-template-columns: 1fr; gap: 40px; }
+            .weddings { grid-template-columns: 1fr; }
+            .weddings__image { min-height: 400px; }
+            .enquiry__grid { grid-template-columns: 1fr; }
+            .footer__grid { grid-template-columns: 1fr 1fr; }
+        }
+        
+        @media (max-width: 768px) {
+            .header__nav { display: none; }
+            .mobile-toggle { display: flex; }
+            
+            .header__nav--open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--color-white);
+                padding: 24px;
+                box-shadow: var(--shadow-lg);
+                gap: 20px;
+            }
+            
+            .header__nav--open a {
+                color: var(--color-navy) !important;
+                font-size: 1rem;
+            }
+            
+            .header__cta { display: none; }
+            
+            .hero__content { padding: 140px 0 100px; }
+            
+            .section { padding: 70px 0; }
+            
+            .services-grid { grid-template-columns: 1fr; }
+            .destinations-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            
+            .weddings__content { padding: 60px 32px; }
+            
+            .form { padding: 32px 24px; }
+            .form__row { grid-template-columns: 1fr; }
+            
+            .footer__grid { grid-template-columns: 1fr; gap: 36px; }
+        }
+        
+        @media (max-width: 480px) {
+            .destinations-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .destination-tile__name { font-size: 1.1rem; bottom: 16px; left: 16px; right: 16px; }
+            .why-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="#" class="header__logo">
+                <img src="Images/Company_Logo.jpeg" alt="Serene Voyage Travel" id="logoImg">
+            </a>
+            
+            <nav class="header__nav" id="nav">
+                <a href="#services">Services</a>
+                <a href="#destinations">Destinations</a>
+                <a href="#partners">Partners</a>
+                <a href="#why-us">Why Us</a>
+                <a href="#enquiry">Contact</a>
+            </nav>
+            
+            <div class="header__cta">
+                <a href="#enquiry" class="btn btn--outline">Enquire Now</a>
+            </div>
+            
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div class="hero__bg"></div>
+        <div class="hero__overlay"></div>
+        <div class="container">
+            <div class="hero__content">
+                <span class="section-label">Your Trusted Ground Services Partner in Thailand</span>
+                <h1 class="h1">Discover Thailand.<br>Travel with Confidence.</h1>
+                <p>Your trusted partner for ground transportation, attraction tickets, and destination services across Thailand. Based in Phuket, serving travel agents, tour operators, and travellers with reliable, seamless experiences.</p>
+                <div class="hero__buttons">
+                    <a href="#services" class="btn btn--primary">Explore Our Services</a>
+                    <a href="#partners" class="btn btn--outline">Become a Travel Partner</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES ========== -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section__header">
+                <span class="section-label">What We Offer</span>
+                <h2 class="h2">Our Services</h2>
+                <p>Reliable ground transportation, attraction bookings, and tailor-made solutions — all from one trusted local partner.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-card__icon">✈</div>
+                    <h3>Airport &amp; Private Transfers</h3>
+                    <p>Comfortable, punctual airport pickups, drop-offs, and private transportation with professional drivers.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">🚐</div>
+                    <h3>Intercity Transfers</h3>
+                    <p>Seamless travel between Thailand's key destinations including Phuket, Krabi, Bangkok, Pattaya, and Koh Samui.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">🎫</div>
+                    <h3>Attraction Tickets &amp; Activities</h3>
+                    <p>Easy access to popular attractions, sightseeing experiences, and memorable activities for your clients.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon">🌏</div>
+                    <h3>Tailor-Made Travel Solutions</h3>
+                    <p>Customised ground service arrangements designed around your clients' specific requirements and preferences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DESTINATIONS ========== -->
+    <section class="section section--gray" id="destinations">
+        <div class="container">
+            <div class="section__header">
+                <span class="section-label">Where We Operate</span>
+                <h2 class="h2">Explore Thailand with Us</h2>
+                <p>From Phuket's tropical beaches to Bangkok's vibrant city life, we connect travellers with Thailand's most popular destinations.</p>
+            </div>
+            
+            <div class="destinations-grid">
+                <div class="destination-tile">
+                    <div class="destination-tile__bg" style="background-image: url('https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=600&q=80');"></div>
+                    <div class="destination-tile__overlay"></div>
+                    <div class="destination-tile__name">Phuket</div>
+                </div>
+                <div class="destination-tile">
+                    <div class="destination-tile__bg" style="background-image: url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&q=80');"></div>
+                    <div class="destination-tile__overlay"></div>
+                    <div class="destination-tile__name">Krabi</div>
+                </div>
+                <div class="destination-tile">
+                    <div class="destination-tile__bg" style="background-image: url('https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=600&q=80');"></div>
+                    <div class="destination-tile__overlay"></div>
+                    <div class="destination-tile__name">Bangkok</div>
+                </div>
+                <div class="destination-tile">
+                    <div class="destination-tile__bg" style="background-image: url('https://images.pexels.com/photos/5988448/pexels-photo-5988448.jpeg');"></div>
+                    <div class="destination-tile__overlay"></div>
+                    <div class="destination-tile__name">Pattaya</div>
+                </div>
+                <div class="destination-tile">
+                    <div class="destination-tile__bg" style="background-image: url('https://images.unsplash.com/photo-1540202404-a2f29016b523?w=600&q=80');"></div>
+                    <div class="destination-tile__overlay"></div>
+                    <div class="destination-tile__name">Koh Samui</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== B2B PARTNERS ========== -->
+    <section class="section section--dark" id="partners">
+        <div class="container">
+            <div class="b2b">
+                <div class="b2b__content">
+                    <span class="section-label">Travel Trade &amp; B2B Partnerships</span>
+                    <h2 class="h2">Your Reliable Partner<br>on the Ground</h2>
+                    <p>We work with travel agents, tour operators, and destination management companies to deliver coordinated ground services and memorable travel experiences for their clients. With strong local expertise and a commitment to service excellence, we support your business with dependable destination services across Thailand.</p>
+                    <a href="#enquiry" class="btn btn--primary">Partner With Us</a>
+                </div>
+                <div class="b2b__image">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="Travel trade partnership">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WHY US ========== -->
+    <section class="section" id="why-us">
+        <div class="container">
+            <div class="section__header">
+                <span class="section-label">Why Serene Voyage Travel</span>
+                <h2 class="h2">Why Choose Us?</h2>
+                <p>Strengths that make us a dependable ground services partner for travel professionals and travellers alike.</p>
+            </div>
+            
+            <div class="why-grid">
+                <div class="why-item">
+                    <div class="why-item__icon">📍</div>
+                    <h4>Phuket-Based<br>Local Expertise</h4>
+                </div>
+                <div class="why-item">
+                    <div class="why-item__icon">🗺</div>
+                    <h4>Coverage Across<br>Key Thai Destinations</h4>
+                </div>
+                <div class="why-item">
+                    <div class="why-item__icon">🎯</div>
+                    <h4>Transfers &amp; Attractions<br>in One Place</h4>
+                </div>
+                <div class="why-item">
+                    <div class="why-item__icon">🤝</div>
+                    <h4>Dedicated<br>Partner Support</h4>
+                </div>
+                <div class="why-item">
+                    <div class="why-item__icon">⭐</div>
+                    <h4>Reliable Coordination<br>&amp; Satisfaction</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WEDDINGS ========== -->
+    <section class="weddings">
+        <div class="weddings__content">
+            <span class="section-label">Special Experiences</span>
+            <h2 class="h2">Celebrate Beautiful<br>Moments in Thailand</h2>
+            <p>From guest transfers to destination coordination, we help couples and their guests enjoy a seamless celebration in a beautiful setting. Let us handle the ground logistics so you can focus on what matters most — celebrating together in paradise.</p>
+            <a href="#enquiry" class="btn btn--dark">Enquire About Weddings</a>
+        </div>
+        <div class="weddings__image">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1000&q=80" alt="Destination wedding in Thailand">
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="section section--gray">
+        <div class="container">
+            <div class="section__header">
+                <span class="section-label">What Our Partners Say</span>
+                <h2 class="h2">Trusted by Travel Professionals</h2>
+                <p>Genuine feedback from customers and business partners who rely on our ground services.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-card__quote">&ldquo;</div>
+                    <p>Serene Voyage has been our go-to ground partner in Thailand for two years. Their coordination is flawless and our clients consistently praise the transfers.</p>
+                    <div class="testimonial-card__author">Sarah M. — Travel Agent, UK</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card__quote">&ldquo;</div>
+                    <p>From airport pickup to attraction tickets, everything was handled seamlessly. It made our family holiday in Phuket completely stress-free.</p>
+                    <div class="testimonial-card__author">James &amp; Priya T. — Travellers, Australia</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card__quote">&ldquo;</div>
+                    <p>Reliable, responsive, and professional. They understand the B2B travel business and deliver exactly what they promise, every single time.</p>
+                    <div class="testimonial-card__author">David L. — Tour Operator, Singapore</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ENQUIRY ========== -->
+    <section class="section enquiry" id="enquiry">
+        <div class="container">
+            <div class="enquiry__grid">
+                <div class="enquiry__info">
+                    <span class="section-label">Get in Touch</span>
+                    <h2 class="h2">Let's Build Successful Travel Experiences Together</h2>
+                    <p>Whether you are a travel agent looking for a reliable ground partner or a traveller planning your next Thailand holiday, we are ready to help.</p>
+                    
+                    <div class="enquiry__contact-item">
+                        <span>📧</span>
+                        <a href="mailto:serenevoyage2026@gmail.com">serenevoyage2026@gmail.com</a>
+                    </div>
+                    <div class="enquiry__contact-item">
+                        <span>📞</span>
+                        <a href="tel:0993299192">099-3299192</a>
+                    </div>
+                    <div class="enquiry__contact-item">
+                        <span>📍</span>
+                        <span>Phuket, Thailand</span>
+                    </div>
+                </div>
+                
+                <div class="form">
+                    <form action="#" method="POST">
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your name" required>
+                            </div>
+                            <div class="form__group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label for="destination">Destination</label>
+                                <select id="destination" name="destination">
+                                    <option value="">Select destination</option>
+                                    <option>Phuket</option>
+                                    <option>Krabi</option>
+                                    <option>Bangkok</option>
+                                    <option>Pattaya</option>
+                                    <option>Koh Samui</option>
+                                    <option>Multiple Destinations</option>
+                                </select>
+                            </div>
+                            <div class="form__group">
+                                <label for="service">Service Required</label>
+                                <select id="service" name="service">
+                                    <option value="">Select service</option>
+                                    <option>Airport Transfer</option>
+                                    <option>Intercity Transfer</option>
+                                    <option>Attraction Tickets</option>
+                                    <option>Tailor-Made Solution</option>
+                                    <option>Wedding Services</option>
+                                    <option>B2B Partnership</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label for="date">Travel Date</label>
+                                <input type="date" id="date" name="date">
+                            </div>
+                            <div class="form__group">
+                                <label for="pax">Number of Passengers</label>
+                                <input type="number" id="pax" name="pax" min="1" placeholder="e.g. 4">
+                            </div>
+                        </div>
+                        <div class="form__group">
+                            <label for="message">Message (optional)</label>
+                            <textarea id="message" name="message" rows="3" placeholder="Tell us more about your requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary">Send Enquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FINAL CTA ========== -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="h2">Ready to Start Your Journey?</h2>
+            <p>From Phuket to Thailand's leading destinations, we connect travellers to the experiences that make every journey memorable.</p>
+            <div class="cta__buttons">
+                <a href="#enquiry" class="btn btn--primary">Contact Us</a>
+                <a href="#partners" class="btn btn--outline">Become a Partner</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <img src="Images/Company_Logo.jpeg" alt="Serene Voyage Travel">
+                    <p>Your trusted ground services partner in Thailand. Reliable transfers, attraction tickets, and destination services across Phuket, Krabi, Bangkok, Pattaya, and Koh Samui.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#partners">B2B Partners</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#enquiry">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Destinations</h4>
+                    <ul>
+                        <li><a href="#destinations">Phuket</a></li>
+                        <li><a href="#destinations">Krabi</a></li>
+                        <li><a href="#destinations">Bangkok</a></li>
+                        <li><a href="#destinations">Pattaya</a></li>
+                        <li><a href="#destinations">Koh Samui</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:serenevoyage2026@gmail.com">serenevoyage2026@gmail.com</a></li>
+                        <li><a href="tel:0993299192">099-3299192</a></li>
+                        <li>Phuket, Thailand</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 Serene Voyage Travel. All rights reserved. Based in Phuket, Thailand.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('header--scrolled', window.scrollY > 80);
+        });
+        
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const nav = document.getElementById('nav');
+        
+        mobileToggle.addEventListener('click', () => {
+            nav.classList.toggle('header__nav--open');
+        });
+        
+        // Close mobile menu on link click
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('header__nav--open');
+            });
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+            });
+        });
+        
+        // Form submission prevention (demo)
+        document.querySelector('.form form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your enquiry! We will get back to you shortly.');
+            this.reset();
+        });
+        
+        // Logo fallback - replace the placeholder with actual logo once hosted
+        // The logo will use the provided Serene Voyage Travel brand mark
+        const logoImg = document.getElementById('logoImg');
+        // If the placeholder fails, try a data URI fallback or simply keep as-is
+        logoImg.addEventListener('error', function() {
+            this.style.display = 'none';
+            // Create a text fallback
+            const fallback = document.createElement('div');
+            fallback.style.cssText = 'font-family: Josefin Sans, sans-serif; font-size: 1.4rem; letter-spacing: 0.15em; color: white; text-transform: uppercase; font-weight: 500;';
+            fallback.textContent = 'Serene Voyage';
+            this.parentNode.appendChild(fallback);
+        });
+        
+        // Also update footer logo
+        document.querySelectorAll('.footer__brand img').forEach(img => {
+            img.addEventListener('error', function() {
+                this.style.display = 'none';
+                const fallback = document.createElement('div');
+                fallback.style.cssText = 'font-family: Josefin Sans, sans-serif; font-size: 1.2rem; letter-spacing: 0.15em; color: white; text-transform: uppercase; font-weight: 500; margin-bottom: 24px;';
+                fallback.textContent = 'Serene Voyage Travel';
+                this.parentNode.insertBefore(fallback, this.nextSibling);
+            });
+        });
+    </script>
+</body>
+</html>
